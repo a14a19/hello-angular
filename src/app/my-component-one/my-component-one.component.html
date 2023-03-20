@@ -1,0 +1,26 @@
+<h2>{{ titleIf }}</h2>
+
+<button (click)="handleStart()" class="btn btn-primary">If-else Guess!</button>
+
+<div *ngIf="start">
+
+  <!-- <div *ngIf="show == 'angular'; then ifBlock else elseBlock"></div> -->
+
+  <ng-template [ngIf]="show === ''">
+    <div>Try your luck!</div>
+  </ng-template>
+
+  <ng-template [ngIf]="show === 'angular'">
+    <div>You guessed it right!</div>
+  </ng-template>
+
+  <ng-template [ngIf]="show !== '' && show !== 'angular'">
+    <div>Try again! Better luck next time!</div>
+  </ng-template>
+
+  <input type="text" #input placeholder="Guess the word..." class="form-control my-2"/>
+
+  <button (click)="handleClick(input.value)" class="btn btn-primary">Guess!</button>
+
+</div>
+

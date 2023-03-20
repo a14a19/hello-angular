@@ -1,0 +1,15 @@
+<h2>{{ title }}</h2>
+
+<button (click)="handleStart()" class="btn btn-primary">Planets!</button>
+
+<div *ngIf="start">
+  <ul *ngFor="let item of planets">
+    <li>Name: {{ item.name }},</li>
+    <li>Radius: {{ item.radius }}km,</li>
+    <li>Moon: {{ item.moon }}</li>
+    <ul *ngFor="let moons of item.moonName">
+      <li>{{ moons }}</li>
+    </ul>
+    <br />
+  </ul>
+</div>

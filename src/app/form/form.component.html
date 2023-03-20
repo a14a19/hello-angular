@@ -1,0 +1,66 @@
+<h2>{{ title }}</h2>
+
+<form #basicForm="ngForm" (ngSubmit)="handleForm(basicForm.value)">
+  <input
+    type="text"
+    placeholder="Name..."
+    ngModel
+    name="name"
+    class="form-control mb-2"
+  />
+  <input
+    type="email"
+    placeholder="Email... but can't type"
+    ngModel
+    name="email"
+    class="form-control mb-2"
+  />
+  <input
+    type="number"
+    placeholder="Number..."
+    ngModel
+    name="number"
+    class="form-control mb-2"
+  />
+  <input
+    type="password"
+    placeholder="Password..."
+    ngModel
+    name="password"
+    class="form-control mb-2"
+  />
+  <!-- <mat-slide-toggle class="form-control mb-2" ngModel name="toggle"
+    >Toggle me!</mat-slide-toggle> -->
+  <!-- <mat-slider min="1" max="100" step="1" discrete>
+    <input matSliderThumb ngModel name="slider" class="slider" />
+  </mat-slider> -->
+  <div>
+    <button class="btn btn-primary">Register</button>
+  </div>
+</form>
+<div class="d-flex align-items-end">
+  <button (click)="handleClick()" class="btn btn-primary mt-2" [disabled]="!initState">Display</button><span class="ms-2 fw-bold fs-4">x{{counter}}</span>
+</div>
+
+<div *ngIf="state">
+  <div *ngFor="let item of list" class="d-flex justify-content-start align-items-center">
+    <span> Name: {{ item.name }} Email: {{ item.email }} </span>
+    <button class="btn btn-danger ms-2" (click)="remove(item.id)">Remove</button>
+  </div>
+</div>
+
+<!-- <form> -->
+  <div class="mt-2">
+    <input type="text" (input)="onNameInput($event)" class="form-control" placeholder="Enter text ... (unidirectional data binding)" >
+  </div>
+
+  <div [innerText]="printInput" class="my-2 fw-bold fs-4">
+  </div>
+
+  <div class="mt-2">
+    <input type="text" [(ngModel)]="printInput" class="form-control" placeholder="Enter text ... (bidirectional data binding)"/>
+  </div>
+
+  <!-- <button type="submit" class="btn btn-primary mt-2">Submit</button> -->
+<!-- </form> -->
+

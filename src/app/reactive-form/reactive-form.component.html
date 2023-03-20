@@ -1,0 +1,18 @@
+<form action="" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <input
+    type="text"
+    placeholder="Name"
+    name="name"
+    formControlName="name"
+    class="form-control mb-2"
+  />
+  <span *ngIf="registerForm.get('controlGroup.name')?.touched" class="help-block">Please enter correct name.</span>
+  <input
+    type="email"
+    placeholder="Email"
+    name="email"
+    formControlName="email"
+    class="form-control mb-2"
+  />
+  <button class="btn btn-primary">Submit</button>
+</form>

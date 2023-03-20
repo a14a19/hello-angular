@@ -1,0 +1,14 @@
+// ::ng-deep .mat-focus {
+//   background-color: black;
+//   color: black;
+//   accent-color: black;
+// }
+
+.mat-mdc-slider.mat-primary {
+  --mdc-slider-active-track-color: red !important;
+  --mdc-slider-handle-color: red;
+  --mdc-slider-focus-handle-color: red;
+  --mdc-slider-hover-handle-color: red;
+  --mat-mdc-slider-hover-ripple-color: rgba(255, 0, 0, 0.256);
+  --mat-mdc-slider-focus-ripple-color: rgba(255, 0, 0, 0.216);
+}

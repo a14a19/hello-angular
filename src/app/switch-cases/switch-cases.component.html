@@ -1,0 +1,25 @@
+<h2>{{ title }}</h2>
+
+<button (click)="handleStart()" class="btn btn-primary">Switch colors!</button>
+
+<div *ngIf="start">
+  <input
+    type="text"
+    #input
+    placeholder="red, blue, green, grey, orange"
+    class="form-control my-2"
+  />
+
+  <button (click)="handleColor(input.value)" class="btn btn-primary">
+    Change!
+  </button>
+
+  <div [ngSwitch]="color">
+    <h3 *ngSwitchCase="'red'" [style.color]="color">{{ color }} color</h3>
+    <h3 *ngSwitchCase="'blue'" [style.color]="color">{{ color }} color</h3>
+    <h3 *ngSwitchCase="'green'" [style.color]="color">{{ color }} color</h3>
+    <h3 *ngSwitchCase="'grey'" [style.color]="color">{{ color }} color</h3>
+    <h3 *ngSwitchCase="'orange'" [style.color]="color">{{ color }} color</h3>
+    <h3 *ngSwitchDefault>No color matched</h3>
+  </div>
+</div>
